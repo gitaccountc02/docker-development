@@ -1,0 +1,24 @@
+name: docker images CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Docker build
+        run: |
+          docker build ./c# -t aimvector/csharp:1.0.0
+      - name: Docker build golang
+        run: |
+          docker build ./golang -t aimvector/golang:1.0.0
+#      - name: Docker build python
+#        run: |
+#          docker build ./python -t aimvector/python:1.0.0
+          
