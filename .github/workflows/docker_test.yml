@@ -20,12 +20,12 @@ jobs:
           docker login -u $user_name -p $user_password
       - name: Docker build
         run: |
-          docker build ./c# -t aimvector/csharp:1.0.0
+          docker build ./c# -t haribabunagilli/csharp:1.0.0
       - name: Docker build python
         run: |
-          docker build ./python -t aimvector/python:1.0.0
+          docker build ./python -t haribabunagilli/python:1.0.0
       - name: Push the docker images
         run: |
-          docker push aimvector/python:1.0.0
-          docker push aimvector/csharp:1.0.0
+          docker push haribabunagilli/python:1.0.0
+          docker push haribabunagilli/csharp:1.0.0
           
